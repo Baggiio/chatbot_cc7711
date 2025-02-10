@@ -9,6 +9,16 @@ import json
 import pickle
 
 import nltk
+import ssl
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+#nltk.download()
+
 from nltk.stem import WordNetLemmatizer
 
 from keras.models import Sequential
@@ -28,7 +38,9 @@ class ChatBot:
     lemmatizer = WordNetLemmatizer()
 
     def createModel(self):
+
         nltk.download('punkt')
+        nltk.download('punkt_tab')
         nltk.download('wordnet')
         nltk.download('omw-1.4')
 
@@ -98,11 +110,11 @@ class ChatBot:
         model.add(Dense(len(train_y[0]), activation='softmax'))
 
         # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
-        sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
+        sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
         # fitting and saving the model
-        hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+        hist = model.fit(np.array(train_x), np.array(train_y), epochs=2000, batch_size=5, verbose=1)
         model.save('chatbot_model.h5', hist)
 
         self.model = model

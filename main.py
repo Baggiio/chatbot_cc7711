@@ -1,5 +1,9 @@
+#pip install nltk numpy tensorflow
+
 from chatbot import ChatBot
 myChatBot = ChatBot()
+
+
 #apenas carregar um modelo pronto
 #myChatBot.loadModel()
 
