@@ -21,12 +21,12 @@ else:
 
 from nltk.stem import WordNetLemmatizer
 
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from tensorflow.keras.optimizers import SGD
-
+from tensorflow import keras
 
 import random
+
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 class ChatBot:
     words = []
@@ -102,15 +102,15 @@ class ChatBot:
 
         # Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
         # equal to number of intents to predict output intent with softmax
-        model = Sequential()
-        model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
-        model.add(Dropout(0.5))
-        model.add(Dense(64, activation='relu'))
-        model.add(Dropout(0.5))
-        model.add(Dense(len(train_y[0]), activation='softmax'))
+        model = keras.models.Sequential()
+        model.add(keras.layers.Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+        model.add(keras.layers.Dropout(0.5))
+        model.add(keras.layers.Dense(64, activation='relu'))
+        model.add(keras.layers.Dropout(0.5))
+        model.add(keras.layers.Dense(len(train_y[0]), activation='softmax'))
 
         # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
-        sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+        sgd = keras.optimizers.SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
         # fitting and saving the model
@@ -122,8 +122,7 @@ class ChatBot:
         print("model created")
 
     def loadModel(self):
-        from keras.models import load_model
-        self.model = load_model('chatbot_model.h5')
+        self.model = keras.models.load_model('chatbot_model.h5')
         self.intents = json.loads(open('intents.json').read())
         self.words = pickle.load(open('words.pkl', 'rb'))
         self.classes = pickle.load(open('classes.pkl', 'rb'))
