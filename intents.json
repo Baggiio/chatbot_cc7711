@@ -1,15 +1,119 @@
-{"intents":[
-  { "tag": "saudacao",
-    "patterns":["Ola","Opa","Oi", "tudo bem","como vai"],
-    "responses": ["Oi","Olá"]
-  },
-  { "tag": "despedida",
-    "patterns":["valeu","tchau","Obrigado","fui","beleza"],
-    "responses": ["Até breve","Falou"]
-  },
-  { "tag": "data_prova",
-    "patterns":["Quando sera a prova?","A prova será em que dia?","vai ter exame?"],
-    "responses": ["no dia 26"]
-  }
-]
+{
+  "intents": [
+      {
+          "tag": "saudacao",
+          "patterns": ["Olá", "Opa", "Oi", "Tudo bem?", "Como vai?", "E aí?", "Bom dia", "Boa tarde", "Boa noite"],
+          "responses": ["Oi! Como posso te ajudar?", "Olá! Como posso auxiliar você hoje?", "Oi! Precisa de ajuda com algo do PIPE?"]
+      },
+      {
+          "tag": "despedida",
+          "patterns": ["Valeu", "Tchau", "Obrigado", "Fui", "Beleza", "Até mais", "Até logo", "Nos vemos"],
+          "responses": ["Até breve! Se precisar, estarei por aqui.", "Falou! Sempre que precisar, estou à disposição.", "Até mais! Qualquer dúvida sobre o PIPE, me chame."]
+      },
+      {
+          "tag": "sobre_chatbot",
+          "patterns": ["Quem é você?", "O que você faz?", "O que você pode fazer?", "Qual sua função?", "Você é um assistente?", "Para que você serve?"],
+          "responses": ["Sou um chatbot especializado em auxiliar pesquisadores e empresas na submissão de projetos PIPE da FAPESP.", "Eu sou um assistente virtual treinado para responder dúvidas sobre o programa PIPE da FAPESP.", "Meu objetivo é ajudar você a entender melhor como submeter um projeto PIPE e esclarecer suas dúvidas sobre o programa."]
+      },
+    {
+      "tag": "sobre_pipe",
+      "patterns": ["O que é o PIPE?", "Fale sobre o PIPE", "Explique o PIPE", "PIPE FAPESP", "Para que serve o PIPE?"],
+      "responses": ["O PIPE-FAPESP apoia a execução de pesquisa científica e/ou tecnológica em micro, pequenas e médias empresas no Estado de São Paulo."]
+    },
+    {
+      "tag": "objetivo_pipe",
+      "patterns": ["Quais os objetivos do PIPE?", "Qual o objetivo do PIPE?", "Para que serve o PIPE?"],
+      "responses": [
+        "São objetivos do PIPE:\n1. Apoiar a pesquisa em ciência e tecnologia como instrumento para promover a inovação tecnológica, promover o desenvolvimento empresarial e aumentar a competitividade das pequenas empresas.\n2. Incrementar a contribuição da pesquisa para o desenvolvimento econômico e social.\n3. Induzir o aumento do investimento privado em pesquisa tecnológica.\n4. Possibilitar que as empresas se associem a pesquisadores do ambiente acadêmico em projetos de pesquisa visando à inovação tecnológica.\n5. Contribuir para a formação e o desenvolvimento de núcleos de desenvolvimento tecnológico nas empresas e para o emprego de pesquisadores no mercado."
+      ]
+    },
+    {
+      "tag": "propriedade_intelectual_pipe",
+      "patterns": ["Quem detém os direitos de propriedade intelectual do PIPE?", "A FAPESP exige compartilhamento da propriedade intelectual?", "A empresa pode explorar os resultados do PIPE?"],
+      "responses": [
+        "As empresas apoiadas pelo Programa Pesquisa Inovativa em Pequenas Empresas (PIPE) detêm exclusivamente os direitos legais de propriedade intelectual dos resultados das pesquisas financiadas, sem a exigência de compartilhamento com a Fundação."
+      ]
+    },
+    {
+      "tag": "exploracao_resultados_pipe",
+      "patterns": ["A empresa pode licenciar os resultados do projeto PIPE?", "Como a empresa pode proteger os resultados do PIPE?"],
+      "responses": [
+        "A empresa poderá explorar, licenciar e proteger os resultados do projeto apoiado pela Fundação da forma que achar mais conveniente, seguindo sua estratégia de negócio, devendo manter a FAPESP informada em relação à propriedade intelectual para fins de acompanhamento."
+      ]
+    },
+    {
+      "tag": "regras_propriedade_intelectual",
+      "patterns": ["Onde posso encontrar as regras de propriedade intelectual do PIPE?", "Quais são as regras de propriedade intelectual do PIPE?"],
+      "responses": [
+        "As regras de propriedade intelectual estão disponíveis em fapesp.br/pi."
+      ]
+    },
+    {
+      "tag": "programa_pipe",
+      "patterns": ["O que é o programa PIPE?", "Explique o programa PIPE", "Fale sobre o programa PIPE"],
+      "responses": ["O Programa Pesquisa Inovativa em Pequenas Empresas da FAPESP destina-se a apoiar a execução de pesquisa científica e tecnológica em pequenas empresas no Estado de São Paulo. Seus objetivos são apoiar a pesquisa em ciência e tecnologia como instrumento para promover a inovação tecnológica e o desenvolvimento empresarial, aumentar a competitividade das pequenas empresas, possibilitar que as empresas se associem a pesquisadores do ambiente acadêmico em projetos de pesquisa visando à inovação tecnológica e contribuir para a formação e o desenvolvimento de núcleos de desenvolvimento tecnológico nas empresas e para o emprego de pesquisadores no mercado de trabalho empresarial criando uma cultura permanente de inovação."]
+    },
+    {
+      "tag": "etapas_pipe",
+      "patterns": ["Há diferentes etapas no programa?", "Quais são as etapas do programa?", "Quais as fases do PIPE?"],
+      "responses": [
+        "a) Fase 1: é destinada à verificação da viabilidade técnico-científica da proposta, (duração de até 9 meses e orçamento de até R$ 300.000, mais Reserva Técnica e Benefícios Complementares);\nb) Fase 2: destina-se à execução da pesquisa propriamente dita (duração de até 24 meses e orçamento de até R$ 1.500.000, mais Reserva Técnica e Benefícios Complementares);\nc) PIPE Invest: Aceleração da chegada ao mercado de Projetos da Fase 2, quando houver terceira parte interessada (duração de até 24 meses e orçamento de até R$ 1.500.000);\nd) Fase 3: desenvolvimento comercial e industrial dos produtos, processos, sistemas e/ou serviços inovadores obtidos a partir de pesquisas anteriores realizadas pela pequena empresa sem o apoio da FAPESP ou a partir de pesquisa apoiada no âmbito do PIPE."
+      ]
+    },
+    {
+      "tag": "fase_1_obrigatoria",
+      "patterns": ["A fase 1 é obrigatória?", "Posso ir direto para a Fase 2?"],
+      "responses": ["A empresa pode submeter uma proposta à Fase 2 Direta. Nesse caso é fundamental demonstrar que a viabilidade técnica da pesquisa já foi demonstrada; para tanto é fundamental apresentar um ótimo documento de 'Justificativa para a Fase 2 Direta'."]
+    },
+    {
+      "tag": "local_execucao_projeto",
+      "patterns": ["O projeto de pesquisa tem que ser feito na empresa?"],
+      "responses": ["Sim, obrigatoriamente. O PIPE destina-se a apoiar a execução de pesquisa EM pequenas empresas sediadas no Estado de São Paulo, conforme está explicitado nas normas do programa disponível em https://fapesp.br/pipe/normas/#1."]
+    },
+    {
+      "tag": "empresa_necessaria",
+      "patterns": ["Preciso já ter a empresa para solicitar o PIPE?"],
+      "responses": ["Não. A FAPESP analisa propostas de empresas ainda não constituídas. Empresas startup ainda não constituídas legalmente são incentivadas a submeter. Nos casos em que a proposta for recomendada, o proponente deverá então abrir formalmente a empresa antes da concessão da proposta."]
+    },
+    {
+      "tag": "empresa_para_pipe",
+      "patterns": ["O que é uma empresa para fins de submissão ao PIPE?", "Quais empresas podem submeter projetos ao PIPE?", "O PIPE aceita qualquer empresa?"],
+      "responses": ["É uma empresa com até 250 funcionários, independentemente do seu faturamento. A FAPESP considera empresa as sociedades empresárias previstas no Código Civil, o empresário individual, o microempreendedor individual (MEI), a sociedade limitada unipessoal e as sociedades simples. Associações, fundações, institutos e cooperativas não podem sediar um PIPE da FAPESP."]
+    },
+    {
+      "tag": "quando_submeter_pipe",
+      "patterns": ["Quando posso submeter uma proposta ao PIPE?", "Qual o período de submissão ao PIPE?", "Existe um prazo para enviar propostas ao PIPE?"],
+      "responses": ["As propostas para o PIPE Fase 1, Fase 2 e PIPE Invest são recebidas em fluxo contínuo durante todo o ano."]
+    },
+    {
+      "tag": "areas_prioritarias_pipe",
+      "patterns": ["Há áreas prioritárias no programa PIPE?", "Quais áreas o PIPE prioriza?", "O PIPE aceita projetos de qualquer área?"],
+      "responses": ["Não. O PIPE visa a apoiar pesquisas promissoras, com potencial de inovação, em qualquer área do conhecimento."]
+    },
+    {
+      "tag": "produto_pronto_pipe",
+      "patterns": ["Tenho um produto pronto e desenvolvido, posso receber financiamento do PIPE para comercializá-lo?", "O PIPE financia comercialização de produtos já desenvolvidos?", "Posso usar o PIPE para vender um produto já pronto?"],
+      "responses": ["Não. O objetivo do PIPE é apoiar projetos de pesquisa para inovação, oferecendo recursos para custear a pesquisa visando ao desenvolvimento de um produto, processo ou serviço inovador. Se o produto já foi desenvolvido, as Fases 1 e 2 do PIPE não são necessárias para financiar pesquisa para se chegar a ele. Nesse caso, a proposta pode ser elegível para outros programas de subvenção econômica, no PIPE Fase 3, financiados em parceria com terceiros."]
+    },
+    {
+      "tag": "titulo_doutor_pipe",
+      "patterns": ["É preciso ter título de doutor para solicitar financiamento no PIPE FAPESP?", "Preciso ser doutor para submeter um projeto ao PIPE?", "O PIPE exige doutorado para submissão de projetos?"],
+      "responses": ["Não. No programa PIPE é fundamental a experiência demonstrada pelo proponente no tema do projeto e a competência demonstrada para a liderança da pesquisa proposta. Embora a titulação acadêmica seja bem-vinda, ela não é de forma nenhuma exigida dos pesquisadores do PIPE."]
+    },
+    {
+      "tag": "formacao_diferente_pipe",
+      "patterns": ["Possuo formação em uma área, posso submeter um projeto em outra área?", "Preciso ter formação na mesma área do projeto para submeter ao PIPE?", "O PIPE permite submissão de projetos fora da minha área de formação?"],
+      "responses": ["No PIPE, o fundamental é demonstrar experiência na área do projeto. É importante que a equipe inclua profissionais de todas as áreas relevantes para a pesquisa. No entanto, nem todos os membros da equipe precisam ter relação direta com a empresa; podem ser incluídos na equipe especialistas de universidades e consultores, remunerados ou não, para complementar as especialidades necessárias à condução da pesquisa. Por exemplo, um projeto que envolve o desenvolvimento de um software para a saúde obrigatoriamente deve incluir na equipe especialistas em desenvolvimento de software e em saúde e um projeto que envolve o uso de eletrônica na agricultura obrigatoriamente deve incluir especialistas em eletrônica e em agricultura."]
+    },
+    {
+      "tag": "dedicacao_exclusiva_pipe",
+      "patterns": ["Preciso ter dedicação exclusiva ao projeto?", "Qual a carga horária mínima para o PIPE?", "Posso trabalhar em outro lugar enquanto executo um projeto PIPE?"],
+      "responses": ["Caso o pesquisador principal seja pago pela empresa e não receba bolsa da FAPESP, é exigida a dedicação mínima de 24 horas semanais ao projeto na empresa. Em casos excepcionais, em que a empresa demonstra não poder arcar com o salário do Pesquisador Responsável, a FAPESP pode analisar solicitação de Bolsa de Pesquisa em Pequena Empresa (Bolsa PE FAPESP). Se o pesquisador principal solicitar Bolsa PE, é necessária a dedicação mínima de 40 horas semanais ao projeto."]
+    },
+    {
+      "tag": "pesquisadores_fora_sp",
+      "patterns": ["Pesquisadores e/ou empresas fora do Estado de São Paulo podem apresentar projetos?", "É possível submeter um PIPE estando fora de São Paulo?", "Empresas de outros estados podem participar do PIPE?"],
+      "responses": ["O Pesquisador Responsável deverá residir no estado de São Paulo para ser elegível ao PIPE. Caso a empresa já esteja constituída fora do estado de São Paulo, o pesquisador deverá submeter o projeto, obrigatoriamente, em nome dessa empresa. Ter unidade de pesquisa constituída no estado de São Paulo (item 3.3 da norma) é condição para a concessão do processo. Adicionalmente, pesquisadores de outros estados que venham a instalar novas empresas em São Paulo e se tornem residentes no estado, também são elegíveis."]
+    }
+  ]
 }
