@@ -17,7 +17,7 @@
       },
       {
         "tag": "sobre_pipe",
-        "patterns": ["O que é o PIPE?", "Fale sobre o PIPE", "Explique o PIPE", "PIPE FAPESP", "Para que serve o PIPE?"],
+        "patterns": ["O que é o PIPE?", "Fale sobre o PIPE", "Explique o PIPE", "PIPE FAPESP"],
         "responses": ["O PIPE-FAPESP apoia a execução de pesquisa científica e/ou tecnológica em micro, pequenas e médias empresas no Estado de São Paulo."]
       },
       {

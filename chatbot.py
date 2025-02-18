@@ -114,7 +114,7 @@ class ChatBot:
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
         # fitting and saving the model
-        hist = model.fit(np.array(train_x), np.array(train_y), epochs=2000, batch_size=5, verbose=1)
+        hist = model.fit(np.array(train_x), np.array(train_y), epochs=5000, batch_size=16, verbose=1)
         model.save('chatbot_model.h5', hist)
 
         self.model = model
