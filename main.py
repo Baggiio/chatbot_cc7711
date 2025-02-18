@@ -5,10 +5,10 @@ myChatBot = ChatBot()
 
 
 #apenas carregar um modelo pronto
-#myChatBot.loadModel()
+myChatBot.loadModel()
 
 #criar o modelo
-myChatBot.createModel()
+#myChatBot.createModel()
 
 print("\nBem vindo ao Chatbot! Como posso te ajudar?")
 
